@@ -27,3 +27,37 @@ collections:
            name: hero_image
            widget: image
            required: false
+
+  - name: projects
+    label: Projects & Photos
+    label_singular: Project
+    folder: content/projects
+    create: true
+    extension: json
+    format: json
+    slug: "{{slug}}"
+    identifier_field: title
+    fields:
+      - label: Project Name
+        name: title
+        widget: string
+
+      - label: Project Description
+        name: description
+        widget: text
+
+      - label: Main Project Image
+        name: main_image
+        widget: image
+
+      - label: Project Gallery
+        name: gallery
+        widget: list
+        fields:
+          - label: Photo
+            name: image
+            widget: image
+          - label: Photo Caption
+            name: caption
+            widget: string
+            required: false
