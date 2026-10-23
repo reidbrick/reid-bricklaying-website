@@ -1,0 +1,29 @@
+backend:
+ name: github
+ repo: reidbrick/reid-bricklaying-website
+ branch: main
+ base_url: https://api.netlify.com
+ auth_endpoint: auth
+
+media_folder: images
+public_folder: /images
+
+collections:
+ - name: website
+   label: Website Content
+   files:
+     - name: homepage
+       label: Homepage
+       file: content/homepage.json
+       format: json
+       fields:
+         - label: Main Headline
+           name: headline
+           widget: string
+         - label: Introduction
+           name: introduction
+           widget: text
+         - label: Homepage Image
+           name: hero_image
+           widget: image
+           required: false
